@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>연습문제4</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #fffaf3;
+      margin: 40px;
+      color: #333;
+    }
+
+    .main-topic {
+      font-size: 20px;
+      font-weight: 600;
+      padding: 15px 20px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .main-topic:hover {
+      transform: translateY(-2px);
+    }
+
+    .main-topic:nth-of-type(1) {
+      background-color: #fce4d6; 
+    }
+
+    .main-topic:nth-of-type(3) {
+      background-color: #dceef2; 
+    }
+
+    .sub-topic {
+      display: none;
+      margin: 0 0 20px 20px;
+      padding: 12px 18px;
+      border-left: 4px solid #999;
+      background-color: #f9f9f9;
+      border-radius: 6px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .sub-topic p {
+      margin: 8px 0;
+      font-size: 16px;
+      color: #5a3e36; /* 브라운 톤 포인트 */
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-topic" onclick="toggleSub('sub1')">☕ Coffee</div>
+  <div id="sub1" class="sub-topic">
+    <p>Americano</p>
+    <p>Espresso</p>
+    <p>Cappuccino</p>
+    <p>Flat White</p>
+    <p>Caramel Macchiato</p>
+  </div>
+
+  <div class="main-topic" onclick="toggleSub('sub2')">🍹 Non-Coffee</div>
+  <div id="sub2" class="sub-topic">
+    <p>Fruit Ade</p>
+    <p>Peach Smoothie</p>
+    <p>Milk Tea</p>
+    <p>Peppermint Tea</p>
+    <p>Sweet Potato Latte</p>
+    <p>Yogurt Frappe</p>
+  </div>
+
+  <script>
+    function toggleSub(id) {
+      const target = document.getElementById(id);
+      const isVisible = target.style.display === 'block';
+      target.style.display = isVisible ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>
